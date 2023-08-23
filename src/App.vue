@@ -84,6 +84,7 @@ let data: GraphData = {
 let graph: any;
 onMounted(async () => {
   const resp = await getDepGraph("default", 10) as any
+  
   // 自动补全列表
   dependenciesList.value = resp.nodes.map((node: Node) => {
     return { value: node.name };
