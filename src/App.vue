@@ -83,17 +83,17 @@ let data: GraphData = {
 
 let graph: any;
 onMounted(async () => {
-  getDepGraph("default", 10).then((resp: any) => {
-    // 自动补全列表
-    dependenciesList.value = resp.nodes.map((node: Node) => {
-      return { value: node.name };
-    });
-    data = { ...resp };
-    // 获取项目详情
-    projectDetail.value = { ...resp };
-    graph = render(data);
-    loading.value = false;
+  const resp = await getDepGraph("default", 10) as any
+  
+  // 自动补全列表
+  dependenciesList.value = resp.nodes.map((node: Node) => {
+    return { value: node.name };
   });
+  data = { ...resp };
+  // 获取项目详情
+  projectDetail.value = { ...resp };
+  graph = render(data);
+  loading.value = false;
 });
 
 // 初始化依赖图页面

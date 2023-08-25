@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+/// <reference types="vitest" />
 import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
@@ -41,9 +42,17 @@ export default defineConfig({
       inline: ['element-plus']
     }
   },
+  test:{
+    environment: 'happy-dom',
+    deps:{
+      inline: ['element-plus']
+    }
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
+    },
+    dedupe: ['vue']
     },
     dedupe: ['vue']
   }

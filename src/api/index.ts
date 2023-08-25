@@ -7,7 +7,6 @@ export const getDepGraph = (name:string, depth:number)=>{
     })
 }
 
-
 export const getNodeDetail= (name:string)=>{
     return request({
         url: `/depgraph-simple/${encodeURIComponent(name)}`,
