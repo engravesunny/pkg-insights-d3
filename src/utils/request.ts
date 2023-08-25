@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const request = axios.create({
     baseURL: 'http://127.0.0.1:50000',
-    // baseURL: 'http://localhost:5173/api',
+    // baseURL: '/api',
     // baseURL: "https://www.fastmock.site/mock/ecf8883ff9dc69f1a831283178b60acd/test/",
 })
 
